@@ -1,3 +1,7 @@
+Ensure that you have snakemake dowloaded and the enviornment file (iwilladdthis)
+Open up a new Terminal (^`)
+type snakemake and press enter
+
 # Sm_Mira_IvT
 
 This is the parent repository for the final project for the fall 2024 semester of BIOL343. To embark on this project, fork the repository and edit it as you please. Grading specifications are described below.

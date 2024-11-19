@@ -1,0 +1,29 @@
+config_file: "config.yaml"
+
+# rule all:
+#     input:
+#         "genome"
+    # conda:
+    #     "env.yaml"
+
+rule fetch_ref_genome:
+    output:
+        "genome/genome.fa"
+    shell:
+        "wget -O {output} https://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/WBPS19/species/schistosoma_mansoni/PRJEA36577/schistosoma_mansoni.PRJEA36577.WBPS19.genomic.fa.gz | "
+        "gzip -d -f > {output}"
+
+rule fetch_ref_annotations:
+    output:
+        "genome/annotations.gtf"
+    shell:
+        "wget -O {output} - https://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/WBPS19/species/schistosoma_mansoni/PRJEA36577/schistosoma_mansoni.PRJEA36577.WBPS19.canonical_geneset.gtf.gz"
+        "gzip -f -d > {output}"
+
+rule create_fai:
+    input:
+        "genome/genome.fa"
+    output:
+        "genome/genome.fa.fai"
+    shell:
+        "samtools faidx {input}"
