@@ -1,24 +1,31 @@
 config_file: "config.yaml"
 
-# rule all:
-#     input:
-#         "genome"
+rule all:
+    input:
+        "genome/genome.fa.fai",
+        "genome/annotations.gtf"
     # conda:
     #     "env.yaml"
 
 rule fetch_ref_genome:
     output:
+        "genome/genome.fa.gz"
+    shell:
+        "wget -O {output} https://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/WBPS19/species/schistosoma_mansoni/PRJEA36577/schistosoma_mansoni.PRJEA36577.WBPS19.genomic.fa.gz"
+
+rule gzip_genome:
+    input:
+        "genome/genome.fa.gz"
+    output:
         "genome/genome.fa"
     shell:
-        "wget -O {output} https://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/WBPS19/species/schistosoma_mansoni/PRJEA36577/schistosoma_mansoni.PRJEA36577.WBPS19.genomic.fa.gz | "
-        "gzip -d -f > {output}"
+        "gzip -d -f {input}"
 
 rule fetch_ref_annotations:
     output:
         "genome/annotations.gtf"
     shell:
-        "wget -O {output} - https://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/WBPS19/species/schistosoma_mansoni/PRJEA36577/schistosoma_mansoni.PRJEA36577.WBPS19.canonical_geneset.gtf.gz"
-        "gzip -f -d > {output}"
+        "wget -O - https://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/WBPS19/species/schistosoma_mansoni/PRJEA36577/schistosoma_mansoni.PRJEA36577.WBPS19.canonical_geneset.gtf.gz | gzip -f -d > {output}"
 
 rule create_fai:
     input:
@@ -27,3 +34,30 @@ rule create_fai:
         "genome/genome.fa.fai"
     shell:
         "samtools faidx {input}"
+
+rule cutadapt:
+    input:
+        "/data/classes/2024/fall/biol343/course_files/20240923_LH00283_0144_B22NMVKLT3/{sample}.fastq.gz"
+    output:
+        "trimmed/{sample}.fastq.gz"
+    # conda:
+    #     "env.yaml"
+    shell:
+        "cutadapt -q 37 -o {output} {sample}"
+
+rule qc:
+    input:
+        "trimmed/{sample}.fastq.gz"
+    output:
+        "trimmed_qc"
+    shell:
+        "fastqc -t 16 {input} -o {output}"
+
+rule multiqc:
+    input:
+        "/data/classes/2024/fall/biol343/course_files/20240923_LH00283_0144_B22NMVKLT3/multiqc_report.html",
+        "trimmed_qc/{sample_qc}"
+    output:
+        "multiqc_report_all_files.html"
+    shell:
+        "multiqc --force -d fastq_trimmed_qc/  /data/cla"
