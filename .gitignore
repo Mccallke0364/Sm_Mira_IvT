@@ -164,3 +164,9 @@ cython_debug/
 genome/genome.fa
 pipeline/genome/genome.fa
 
+fastq_trimmed/Int-02_S43_L005_R2_001.fastq.gz
+fastq_trimmed/Int_01_1.fastq.gz
+fastq_trimmed/Int_01_2.fastq.gz
+genome/genome.fa
+pipeline/genome/genome.fa
+pipeline/genome/genome.fa.gz
