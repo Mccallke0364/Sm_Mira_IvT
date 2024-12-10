@@ -1,7 +1,12 @@
 Module	Section	Sample Name	Source
-Snippy	snippy	multiqc_report_all_ipynb_data | multiqc	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/multiqc_report_all_ipynb_data/multiqc.log
-Trimmomatic	all_sections	final_project.ipynb	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/final_project.ipynb
-FastQC	all_sections	fastq_trimmed_qc | Int-02_S43_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/fastq_trimmed_qc/Int-02_S43_L005_R2_001_fastqc.zip
 FastQC	all_sections	fastq_qc | Int-01_S42_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/fastq_qc/Int-01_S42_L005_R1_001_fastqc.zip
 FastQC	all_sections	fastq_qc | Int-01_S42_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/fastq_qc/Int-01_S42_L005_R2_001_fastqc.zip
 FastQC	all_sections	fastq_qc | Int-02_S43_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/fastq_qc/Int-02_S43_L005_R1_001_fastqc.zip
+FastQC	all_sections	fastq_qc | Int-02_S43_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/fastq_qc/Int-02_S43_L005_R2_001_fastqc.zip
+FastQC	all_sections	fastq_qc | Int-03_S44_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/fastq_qc/Int-03_S44_L005_R1_001_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc | Int_01_2	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/fastq_trimmed_qc/Int_01_2_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc | Int_01_1	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/fastq_trimmed_qc/Int_01_1_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc | Int_03_1	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/fastq_trimmed_qc/Int_03_1_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc | Int_03_2	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/fastq_trimmed_qc/Int_03_2_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc | Int_02_1	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/fastq_trimmed_qc/Int_02_1_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc | Int_02_2	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/fastq_trimmed_qc/Int_02_2_fastqc.zip

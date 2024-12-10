@@ -103,29 +103,36 @@ rule multiqc:
         dir=rules.qc.params.out
     shell:
         "multiqc -f -d {params.dir} -n {output}"
-rule star:
+# rule star:
+#     input:
 
-    threads:
-        32
-    shell:
-        """
-        !STAR \
-            --runThreadN 32 \
-            --runMode alignReads \
-            --genomeDir ../2_genome_exploration/genome/star \
-            --readFilesIn ../5_fastq/trimmed/SRR26691082.fastq.gz \
-            --readFilesCommand zcat \
-            --outSAMtype BAM SortedByCoordinate \
-            --outSAMunmapped Within \
-            --outFileNamePrefix ../6_alignment/alignment/star/SRR26691082/
+#     output:
 
-        """
-!STAR \
---runThreadN 32 \
---runMode alignReads \
---genomeDir ../2_genome_exploration/genome/star \
---readFilesIn ../5_fastq/trimmed/SRR26691082.fastq.gz \
---readFilesCommand zcat \
---outSAMtype BAM SortedByCoordinate \
---outSAMunmapped Within \
---outFileNamePrefix ../6_alignment/alignment/star/SRR26691082/
+#     threads:
+#         32
+#     run:
+#         """
+#         STAR \
+#             --runThreadN 32 \
+#             --runMode genomeGenerate \
+#             --genomeDir alignment/star \
+#             --genomeFastaFiles genome/genome.fa \
+#             --sjdbGTFfile genome/annotations.gtf \
+#             --sjdbOverhang 150\
+#             --genomeSAindexNbases 13
+#         """,
+#         """ 
+#         !STAR \
+#             --runThreadN 32 \
+#             --runMode alignReads \
+#             --genomeDir alignment/star \
+#             --readFilesManifest manifest.tsv \
+#             --readFilesCommand zcat \
+#             --outSAMtype BAM SortedByCoordinate \
+#             --outSAMunmapped Within \
+#             --outFileNamePrefix alignment/star/
+#             --outSAMattributes NH HI AS nM RG \
+#             --outFileNamePrefix alignment/star/ \
+#             --sjdbFileChrStartEnd alignment/star/SJ.out.tab
+#         """
+    

@@ -1,0 +1,17 @@
+Module	Section	Sample Name	Source
+FastQC	all_sections	qc_snake | Int-01_S42_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Int-01_S42_L005_R1_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Int-01_S42_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Int-01_S42_L005_R2_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Liv-04_S41_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Liv-04_S41_L005_R2_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Int-03_S44_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Int-03_S44_L005_R2_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Int-03_S44_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Int-03_S44_L005_R1_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Liv-04_S41_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Liv-04_S41_L005_R1_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Liv-02_S39_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Liv-02_S39_L005_R2_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Liv-02_S39_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Liv-02_S39_L005_R1_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Int-02_S43_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Int-02_S43_L005_R1_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Int-02_S43_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Int-02_S43_L005_R2_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Int-04_S45_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Int-04_S45_L005_R2_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Int-04_S45_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Int-04_S45_L005_R1_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Liv-01_S38_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Liv-01_S38_L005_R1_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Liv-03_S40_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Liv-03_S40_L005_R1_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Liv-01_S38_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Liv-01_S38_L005_R2_001_trimmed_fastqc.zip
+FastQC	all_sections	qc_snake | Liv-03_S40_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/pipeline/qc_snake/Liv-03_S40_L005_R2_001_trimmed_fastqc.zip

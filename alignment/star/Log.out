@@ -1,0 +1,39 @@
+STAR version=2.7.10b
+STAR compilation time,server,dir=2022-11-01T09:53:26-04:00 :/home/dobin/data/STAR/STARcode/STAR.master/source
+STAR git: On branch master ; commit c6f8efc2c7043ef83bf8b0d9bed36bbb6b9b1133 ; diff files: CHANGES.md 
+##### Command Line:
+STAR --runThreadN 32 --runMode alignReads --genomeDir alignment/star --readFilesManifest manifest.tsv --readFilesCommand zcat --outSAMtype BAM SortedByCoordinate --outSAMunmapped Within --outFileNamePrefix alignment/star/
+##### Initial USER parameters from Command Line:
+outFileNamePrefix                 alignment/star/
+###### All USER parameters from Command Line:
+runThreadN                    32     ~RE-DEFINED
+runMode                       alignReads        ~RE-DEFINED
+genomeDir                     alignment/star     ~RE-DEFINED
+readFilesManifest             manifest.tsv        ~RE-DEFINED
+readFilesCommand              zcat        ~RE-DEFINED
+outSAMtype                    BAM   SortedByCoordinate        ~RE-DEFINED
+outSAMunmapped                Within        ~RE-DEFINED
+outFileNamePrefix             alignment/star/     ~RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+runMode                           alignReads   
+runThreadN                        32
+genomeDir                         alignment/star
+readFilesCommand                  zcat   
+readFilesManifest                 manifest.tsv   
+outFileNamePrefix                 alignment/star/
+outSAMtype                        BAM   SortedByCoordinate   
+outSAMunmapped                    Within   
+
+-------------------------------
+##### Final effective command line:
+STAR   --runMode alignReads      --runThreadN 32   --genomeDir alignment/star   --readFilesCommand zcat      --readFilesManifest manifest.tsv      --outFileNamePrefix alignment/star/   --outSAMtype BAM   SortedByCoordinate      --outSAMunmapped Within   
+----------------------------------------
+
+
+Parameters_readFilesInit.cpp:98:readFilesInit: exiting because of *INPUT FILE* error: could not open input file manifest.tsv
+Solution: check that the file exists and you have read permission for this file
+          SOLUTION: check the path and permissions for readFilesManifest = manifest.tsv
+
+Dec 10 14:22:54 ...... FATAL ERROR, exiting
