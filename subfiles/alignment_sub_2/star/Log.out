@@ -1,0 +1,306 @@
+STAR version=2.7.10b
+STAR compilation time,server,dir=2023-05-25T06:56:23+0000 :/opt/conda/conda-bld/star_1684997536154/work/source
+##### Command Line:
+/data/users/mccallke0364/.conda/envs/final/bin/STAR-avx2 --runThreadN 16 --runMode alignReads --genomeDir genome/star --readFilesManifest manifest.tsv --readFilesCommand zcat --outSAMtype BAM SortedByCoordinate --outSAMunmapped Within --outSAMattributes NH HI AS nM RG --outFileNamePrefix alignment_sub_2/star/ --sjdbFileChrStartEnd alignment_sub_2/star/SJ.out.tab
+##### Initial USER parameters from Command Line:
+outFileNamePrefix                 alignment_sub_2/star/
+###### All USER parameters from Command Line:
+runThreadN                    16     ~RE-DEFINED
+runMode                       alignReads        ~RE-DEFINED
+genomeDir                     genome/star     ~RE-DEFINED
+readFilesManifest             manifest.tsv        ~RE-DEFINED
+readFilesCommand              zcat        ~RE-DEFINED
+outSAMtype                    BAM   SortedByCoordinate        ~RE-DEFINED
+outSAMunmapped                Within        ~RE-DEFINED
+outSAMattributes              NH   HI   AS   nM   RG        ~RE-DEFINED
+outFileNamePrefix             alignment_sub_2/star/     ~RE-DEFINED
+sjdbFileChrStartEnd           alignment_sub_2/star/SJ.out.tab        ~RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+runMode                           alignReads   
+runThreadN                        16
+genomeDir                         genome/star
+readFilesCommand                  zcat   
+readFilesManifest                 manifest.tsv   
+outFileNamePrefix                 alignment_sub_2/star/
+outSAMtype                        BAM   SortedByCoordinate   
+outSAMattributes                  NH   HI   AS   nM   RG   
+outSAMunmapped                    Within   
+sjdbFileChrStartEnd               alignment_sub_2/star/SJ.out.tab   
+
+-------------------------------
+##### Final effective command line:
+/data/users/mccallke0364/.conda/envs/final/bin/STAR-avx2   --runMode alignReads      --runThreadN 16   --genomeDir genome/star   --readFilesCommand zcat      --readFilesManifest manifest.tsv      --outFileNamePrefix alignment_sub_2/star/   --outSAMtype BAM   SortedByCoordinate      --outSAMattributes NH   HI   AS   nM   RG      --outSAMunmapped Within      --sjdbFileChrStartEnd alignment_sub_2/star/SJ.out.tab   
+----------------------------------------
+
+Reading input file names and read groups from readFileManifest manifest.tsv
+/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_01_1.fastq.gz	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_01_2.fastq.gz	ID:Int-01	SM:Int-01
+/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_02_1.fastq.gz	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_02_2.fastq.gz	ID:Int-02	SM:Int-02
+/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_03_1.fastq.gz	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_03_2.fastq.gz	ID:Int-03	SM:Int-03
+/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_04_1.fastq.gz	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_04_2.fastq.gz	ID:Int-04	SM:Int-04
+/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_01_1.fastq.gz	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_01_2.fastq.gz	ID:Liv-01	SM:Liv-01
+/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_02_1.fastq.gz	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_02_2.fastq.gz	ID:Liv-02	SM:Liv-02
+/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_03_1.fastq.gz	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_03_2.fastq.gz	ID:Liv-03	SM:Liv-03
+/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_04_1.fastq.gz	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_04_2.fastq.gz	ID:Liv-04	SM:Liv-04
+Number of fastq files for each mate = 8
+
+   Input read files for mate 1 :
+-rw-r--r-- 1 mccallke0364 SFU_Users 544086335 Dec 14 16:54 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_01_1.fastq.gz
+-rw-r--r-- 1 mccallke0364 SFU_Users 834600900 Dec 14 16:54 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_02_1.fastq.gz
+-rw-r--r-- 1 mccallke0364 SFU_Users 746726087 Dec 14 16:55 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_03_1.fastq.gz
+-rw-r--r-- 1 mccallke0364 SFU_Users 970064578 Dec 14 16:55 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_04_1.fastq.gz
+-rw-r--r-- 1 mccallke0364 SFU_Users 1075374409 Dec 14 16:56 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_01_1.fastq.gz
+-rw-r--r-- 1 mccallke0364 SFU_Users 649112755 Dec 14 16:56 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_02_1.fastq.gz
+-rw-r--r-- 1 mccallke0364 SFU_Users 1150825344 Dec 14 16:57 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_03_1.fastq.gz
+-rw-r--r-- 1 mccallke0364 SFU_Users 739757602 Dec 14 16:58 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_04_1.fastq.gz
+
+   readsCommandsFile:
+exec > "alignment_sub_2/star/_STARtmp/tmp.fifo.read1"
+echo FILE 0
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_01_1.fastq.gz"
+echo FILE 1
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_02_1.fastq.gz"
+echo FILE 2
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_03_1.fastq.gz"
+echo FILE 3
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_04_1.fastq.gz"
+echo FILE 4
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_01_1.fastq.gz"
+echo FILE 5
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_02_1.fastq.gz"
+echo FILE 6
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_03_1.fastq.gz"
+echo FILE 7
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_04_1.fastq.gz"
+
+
+   Input read files for mate 2 :
+-rw-r--r-- 1 mccallke0364 SFU_Users 554738876 Dec 14 16:54 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_01_2.fastq.gz
+-rw-r--r-- 1 mccallke0364 SFU_Users 850055292 Dec 14 16:54 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_02_2.fastq.gz
+-rw-r--r-- 1 mccallke0364 SFU_Users 756658689 Dec 14 16:55 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_03_2.fastq.gz
+-rw-r--r-- 1 mccallke0364 SFU_Users 977649120 Dec 14 16:55 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_04_2.fastq.gz
+-rw-r--r-- 1 mccallke0364 SFU_Users 1084660124 Dec 14 16:56 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_01_2.fastq.gz
+-rw-r--r-- 1 mccallke0364 SFU_Users 663153702 Dec 14 16:56 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_02_2.fastq.gz
+-rw-r--r-- 1 mccallke0364 SFU_Users 1170867487 Dec 14 16:57 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_03_2.fastq.gz
+-rw-r--r-- 1 mccallke0364 SFU_Users 748386118 Dec 14 16:58 /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_04_2.fastq.gz
+
+   readsCommandsFile:
+exec > "alignment_sub_2/star/_STARtmp/tmp.fifo.read2"
+echo FILE 0
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_01_2.fastq.gz"
+echo FILE 1
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_02_2.fastq.gz"
+echo FILE 2
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_03_2.fastq.gz"
+echo FILE 3
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_04_2.fastq.gz"
+echo FILE 4
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_01_2.fastq.gz"
+echo FILE 5
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_02_2.fastq.gz"
+echo FILE 6
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_03_2.fastq.gz"
+echo FILE 7
+zcat      "/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_04_2.fastq.gz"
+
+ParametersSolo: --soloCellFilterType CellRanger2.2 filtering parameters:  3000 0.99 10
+WARNING: --limitBAMsortRAM=0, will use genome size as RAM limit for BAM sorting
+Finished loading and checking parameters
+Reading genome generation parameters:
+### /data/users/mccallke0364/.conda/envs/final/bin/STAR-avx2   --runMode genomeGenerate      --runThreadN 16   --genomeDir genome/star   --genomeFastaFiles genome/genome.fa      --genomeSAindexNbases 13   --sjdbGTFfile genome/annotations.gtf   --sjdbOverhang 139
+### GstrandBit=32
+versionGenome                 2.7.4a     ~RE-DEFINED
+genomeType                    Full     ~RE-DEFINED
+genomeFastaFiles              genome/genome.fa        ~RE-DEFINED
+genomeSAindexNbases           13     ~RE-DEFINED
+genomeChrBinNbits             18     ~RE-DEFINED
+genomeSAsparseD               1     ~RE-DEFINED
+genomeTransformType           None     ~RE-DEFINED
+genomeTransformVCF            -     ~RE-DEFINED
+sjdbOverhang                  139     ~RE-DEFINED
+sjdbFileChrStartEnd           -        ~RE-DEFINED
+sjdbGTFfile                   genome/annotations.gtf     ~RE-DEFINED
+sjdbGTFchrPrefix              -     ~RE-DEFINED
+sjdbGTFfeatureExon            exon     ~RE-DEFINED
+sjdbGTFtagExonParentTranscripttranscript_id     ~RE-DEFINED
+sjdbGTFtagExonParentGene      gene_id     ~RE-DEFINED
+sjdbInsertSave                Basic     ~RE-DEFINED
+genomeFileSizes               412457630   3389209415        ~RE-DEFINED
+Genome version is compatible with current STAR
+Number of real (reference) chromosomes= 10
+1	SM_V10_1	87984048	0
+2	SM_V10_Z	86692428	88080384
+3	SM_V10_3	49793710	174850048
+4	SM_V10_4	46471573	224657408
+5	SM_V10_2	45716244	271319040
+6	SM_V10_6	24696076	317194240
+7	SM_V10_5	24128858	342097920
+8	SM_V10_7	19942475	366477312
+9	SM_V10_WSR	5969970	386662400
+10	SM_V10_MITO	26917	392691712
+--sjdbOverhang = 139 taken from the generated genome
+Started loading the genome: Thu Dec 19 00:05:36 2024
+
+Genome: size given as a parameter = 412457630
+SA: size given as a parameter = 3389209415
+SAindex: size given as a parameter = 1
+Read from SAindex: pGe.gSAindexNbases=13  nSAi=89478484
+nGenome=412457630;  nSAbyte=3389209415
+GstrandBit=32   SA number of indices=821626524
+Shared memory is not used for genomes. Allocated a private copy of the genome.
+Genome file size: 412457630 bytes; state: good=1 eof=0 fail=0 bad=0
+Loading Genome ... done! state: good=1 eof=0 fail=0 bad=0; loaded 412457630 bytes
+SA file size: 3389209415 bytes; state: good=1 eof=0 fail=0 bad=0
+Loading SA ... done! state: good=1 eof=0 fail=0 bad=0; loaded 3389209415 bytes
+Loading SAindex ... done: 391468491 bytes
+Finished loading the genome: Thu Dec 19 00:05:42 2024
+
+Processing splice junctions database sjdbN=69906,   pGe.sjdbOverhang=139 
+alignIntronMax=alignMatesGapMax=0, the max intron size will be approximately determined by (2^winBinNbits)*winAnchorDistNbins=589824
+Dec 19 00:05:43   Loaded database junctions from the generated genome genome/star//sjdbList.out.tab: 69906 total junctions
+
+Dec 19 00:05:43   Loaded database junctions from the pGe.sjdbFileChrStartEnd file(s), total number of junctions:161858
+
+WARNING: long repeat for junction # 7533 : SM_V10_1 40861022 40868365; left shift = 3; right shift = 255
+WARNING: long repeat for junction # 43741 : SM_V10_4 12873739 12882944; left shift = 231; right shift = 255
+WARNING: long repeat for junction # 79693 : SM_V10_1 40861022 40868365; left shift = 3; right shift = 255
+WARNING: long repeat for junction # 127571 : SM_V10_4 12873739 12882944; left shift = 231; right shift = 255
+Dec 19 00:05:45   Finished preparing junctions
+Dec 19 00:05:45 ..... inserting junctions into the genome indices
+Dec 19 00:05:50   Finished SA search: number of new junctions=35937, old junctions=69906
+Dec 19 00:05:55   Finished sorting SA indicesL nInd=19980464
+Genome size with junctions=422484053  392953856   29530197
+GstrandBit1=32   GstrandBit=32
+Dec 19 00:06:04   Finished inserting junction indices
+Dec 19 00:06:08   Finished SAi
+Dec 19 00:06:08 ..... finished inserting junctions into genome
+Created thread # 1
+Starting to map file # 0
+mate 1:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_01_1.fastq.gz
+mate 2:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_01_2.fastq.gz
+Created thread # 2
+Created thread # 3
+Created thread # 4
+Created thread # 5
+Created thread # 6
+Created thread # 7
+Created thread # 8
+Created thread # 9
+Created thread # 10
+Created thread # 11
+Created thread # 12
+Created thread # 13
+Created thread # 14
+Created thread # 15
+BAM sorting: 149504 mapped reads
+BAM sorting bins genomic start loci:
+1	0	15206511
+2	0	26884339
+3	0	34169632
+4	0	40758018
+5	0	49432985
+6	0	62607661
+7	0	64697647
+8	0	64734723
+9	0	69363573
+10	0	78500602
+11	1	8883608
+12	1	21722361
+13	1	29670810
+14	1	40441152
+15	1	49212700
+16	1	65423631
+17	1	76936325
+18	2	673522
+19	2	10418524
+20	2	24241802
+21	2	27355507
+22	2	36821338
+23	3	1631711
+24	3	15200979
+25	3	29984824
+26	3	42467863
+27	4	7534212
+28	4	22410818
+29	4	36305779
+30	4	38302729
+31	4	38323215
+32	4	38350964
+33	4	39686857
+34	4	39687268
+35	4	39729059
+36	4	39736920
+37	4	39736993
+38	4	39755240
+39	4	39755370
+40	4	39859167
+41	5	961481
+42	5	13346250
+43	5	23155421
+44	6	11993850
+45	6	23851180
+46	7	14661857
+47	9	2895
+48	9	4091
+Starting to map file # 1
+mate 1:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_02_1.fastq.gz
+mate 2:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_02_2.fastq.gz
+Starting to map file # 2
+mate 1:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_03_1.fastq.gz
+mate 2:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_03_2.fastq.gz
+Starting to map file # 3
+mate 1:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_04_1.fastq.gz
+mate 2:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Int_04_2.fastq.gz
+Starting to map file # 4
+mate 1:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_01_1.fastq.gz
+mate 2:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_01_2.fastq.gz
+Starting to map file # 5
+mate 1:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_02_1.fastq.gz
+mate 2:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_02_2.fastq.gz
+Starting to map file # 6
+mate 1:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_03_1.fastq.gz
+mate 2:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_03_2.fastq.gz
+Starting to map file # 7
+mate 1:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_04_1.fastq.gz
+mate 2:   /data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_sub/Liv_04_2.fastq.gz
+Thread #6 end of input stream, nextChar=-1
+Completed: thread #2
+Completed: thread #10
+Completed: thread #7
+Completed: thread #8
+Completed: thread #5
+Completed: thread #0
+Completed: thread #9
+Completed: thread #1
+Joined thread # 1
+Joined thread # 2
+Completed: thread #11
+Completed: thread #14
+Completed: thread #3
+Joined thread # 3
+Completed: thread #13
+Completed: thread #4
+Joined thread # 4
+Joined thread # 5
+Completed: thread #6
+Joined thread # 6
+Joined thread # 7
+Joined thread # 8
+Joined thread # 9
+Joined thread # 10
+Joined thread # 11
+Completed: thread #15
+Completed: thread #12
+Joined thread # 12
+Joined thread # 13
+Joined thread # 14
+Joined thread # 15
+Dec 19 04:46:45 ..... finished mapping
+RAM after mapping:
+VmPeak:	20147488 kB; VmSize:	15559756 kB; VmHWM:	 8870744 kB; VmRSS:	 8869976 kB; 
+RAM after freeing genome index memory:
+VmPeak:	20147488 kB; VmSize:	 8944624 kB; VmHWM:	 8870744 kB; VmRSS:	 2517516 kB; 
+Dec 19 04:46:48 ..... started sorting BAM
+Max memory needed for sorting = 149081385
+ALL DONE!

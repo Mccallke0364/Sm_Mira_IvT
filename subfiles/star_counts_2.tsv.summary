@@ -1,0 +1,15 @@
+Status	counting_sub_2/dedup_sub/star.bam:Int-01	counting_sub_2/dedup_sub/star.bam:Int-02	counting_sub_2/dedup_sub/star.bam:Int-03	counting_sub_2/dedup_sub/star.bam:Int-04	counting_sub_2/dedup_sub/star.bam:Liv-01	counting_sub_2/dedup_sub/star.bam:Liv-02	counting_sub_2/dedup_sub/star.bam:Liv-03	counting_sub_2/dedup_sub/star.bam:Liv-04
+Assigned	23647	8272	14120	23685	9482	31335	2251	22222
+Unassigned_Unmapped	22005397	29036187	25088921	32982338	38777524	24782188	40154003	24448908
+Unassigned_Read_Type	0	0	0	0	0	0	0	0
+Unassigned_Singleton	0	0	0	0	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0	0	0	0	0
+Unassigned_Chimera	0	0	0	0	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0	0	0	0	0
+Unassigned_Duplicate	815093	535391	370043	447739	223216	1053129	47893	522755
+Unassigned_MultiMapping	0	0	0	0	0	0	0	0
+Unassigned_Secondary	0	0	0	0	0	0	0	0
+Unassigned_NonSplit	0	0	0	0	0	0	0	0
+Unassigned_NoFeatures	2272740	897521	1314813	1890152	771030	2211711	230847	1657306
+Unassigned_Overlapping_Length	0	0	0	0	0	0	0	0
+Unassigned_Ambiguity	206	87	157	260	130	335	16	315

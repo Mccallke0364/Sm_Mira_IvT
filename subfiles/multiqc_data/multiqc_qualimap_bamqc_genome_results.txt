@@ -1,0 +1,3 @@
+Sample	mean_mapping_quality	mapped_bases	mean_insert_size	median_insert_size	mean_coverage	total_reads	regions_size	percentage_aligned_on_target	percentage_aligned	regions_mapped_reads	sequenced_bases	general_error_rate	bam_file	mapped_reads
+qualimap | star | bam |	242.2091	9061411757.0	5398.9929	324.0	43.5301	249009028.0	208164228.0	86.42597383266545	4.359979269506646	9383045.0	1291057126.0	0.0	alignment_sub/star/Aligned.sortedByCoord.out.bam	10856742.0
+qualimap_2 | star | bam |	242.2293	12342115281.0	10043.6024	342.0	59.2903	249009028.0	208164228.0	82.82313589002214	4.712103048729623	9718104.0	1284302800.0	0.0	alignment_sub_2/star/Aligned.sortedByCoord.out.bam	11733562.0

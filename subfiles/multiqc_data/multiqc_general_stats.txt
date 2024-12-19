@@ -1,0 +1,42 @@
+Sample	FastQC_mqc-generalstats-fastqc-total_sequences	QualiMap_mqc-generalstats-qualimap-regions_mapped_reads	FastQC_mqc-generalstats-fastqc-median_sequence_length	QualiMap_mqc-generalstats-qualimap-median_insert_size	QualiMap_mqc-generalstats-qualimap-general_error_rate	QualiMap_mqc-generalstats-qualimap-50_x_pc	QualiMap_mqc-generalstats-qualimap-mean_coverage	QualiMap_mqc-generalstats-qualimap-1_x_pc	STAR_mqc-generalstats-star-uniquely_mapped_percent	QualiMap_mqc-generalstats-qualimap-median_coverage	FastQC_mqc-generalstats-fastqc-avg_sequence_length	QualiMap_mqc-generalstats-qualimap-avg_gc	QualiMap_mqc-generalstats-qualimap-5_x_pc	QualiMap_mqc-generalstats-qualimap-percentage_aligned_on_target	FastQC_mqc-generalstats-fastqc-percent_duplicates	QualiMap_mqc-generalstats-qualimap-30_x_pc	QualiMap_mqc-generalstats-qualimap-regions_size	QualiMap_mqc-generalstats-qualimap-5_3_bias	FastQC_mqc-generalstats-fastqc-percent_gc	FastQC_mqc-generalstats-fastqc-percent_fails	QualiMap_mqc-generalstats-qualimap-percentage_aligned	QualiMap_mqc-generalstats-qualimap-mapped_reads	QualiMap_mqc-generalstats-qualimap-total_reads	QualiMap_mqc-generalstats-qualimap-reads_aligned	STAR_mqc-generalstats-star-uniquely_mapped	QualiMap_mqc-generalstats-qualimap-10_x_pc
+.									3.83																4764788.0	
+alignment_sub | star |									3.83																4764788.0	
+alignment_sub_2 | star |									4.01																4995748.0	
+fastq_qc_sub | Int-01_S42_L005_R1_001	12421987.0		151								151.0				73.15821097531398				49.0	36.36363636363637						
+fastq_qc_sub | Int-01_S42_L005_R2_001	12421987.0		151								151.0				74.4516759037079				50.0	45.45454545454545						
+fastq_qc_sub | Int-02_S43_L005_R1_001	15738415.0		151								151.0				68.19962108276289				50.0	45.45454545454545						
+fastq_qc_sub | Int-02_S43_L005_R2_001	15738415.0		151								151.0				70.49757372103419				51.0	45.45454545454545						
+fastq_qc_sub | Int-03_S44_L005_R1_001	13521806.0		151								151.0				56.984115785930044				49.0	36.36363636363637						
+fastq_qc_sub | Int-03_S44_L005_R2_001	13521806.0		151								151.0				60.480094805253145				50.0	45.45454545454545						
+fastq_qc_sub | Int-04_S45_L005_R1_001	17961443.0		151								151.0				58.44512738901909				49.0	36.36363636363637						
+fastq_qc_sub | Int-04_S45_L005_R2_001	17961443.0		151								151.0				62.028688620825605				50.0	45.45454545454545						
+fastq_qc_sub | Liv-01_S38_L005_R1_001	20176743.0		151								151.0				60.54877132695965				49.0	45.45454545454545						
+fastq_qc_sub | Liv-01_S38_L005_R2_001	20176743.0		151								151.0				64.06773166971985				50.0	54.54545454545454						
+fastq_qc_sub | Liv-02_S39_L005_R1_001	14755790.0		151								151.0				76.03564103010457				52.0	36.36363636363637						
+fastq_qc_sub | Liv-02_S39_L005_R2_001	14755790.0		151								151.0				77.04462386226162				53.0	54.54545454545454						
+fastq_qc_sub | Liv-03_S40_L005_R1_001	20441278.0		151								151.0				58.64546286014226				48.0	45.45454545454545						
+fastq_qc_sub | Liv-03_S40_L005_R2_001	20441278.0		151								151.0				61.94559077039338				49.0	54.54545454545454						
+fastq_qc_sub | Liv-04_S41_L005_R1_001	13461820.0		151								151.0				57.4439038274358				48.0	36.36363636363637						
+fastq_qc_sub | Liv-04_S41_L005_R2_001	13461820.0		151								151.0				60.377076615581636				49.0	45.45454545454545						
+fastq_trimmed_qc_sub | Int_01_1	12168802.0		141								133.40066803617972				74.9934871634203				48.0	36.36363636363637						
+fastq_trimmed_qc_sub | Int_01_2	12168802.0		141								133.53833491579533				74.79063887834909				48.0	18.181818181818183						
+fastq_trimmed_qc_sub | Int_02_1	15058640.0		141								135.46629941349286				70.25897137863676				48.0	36.36363636363637						
+fastq_trimmed_qc_sub | Int_02_2	15058640.0		141								135.60721027928153				70.07323530395223				49.0	27.27272727272727						
+fastq_trimmed_qc_sub | Int_03_1	13203535.0		141								135.0693586982577				60.98025268960878				48.0	27.27272727272727						
+fastq_trimmed_qc_sub | Int_03_2	13203535.0		141								135.22958298667743				60.65701958347072				48.0	27.27272727272727						
+fastq_trimmed_qc_sub | Int_04_1	17401148.0		141								131.75306347604192				62.04374445901256				47.0	27.27272727272727						
+fastq_trimmed_qc_sub | Int_04_2	17401148.0		141								131.98175706568324				62.07456567008937				48.0	27.27272727272727						
+fastq_trimmed_qc_sub | Liv_01_1	19736635.0		141								130.00806175926138				64.72542827388773				48.0	27.27272727272727						
+fastq_trimmed_qc_sub | Liv_01_2	19736635.0		141								130.31327194326693				64.67151960147838				48.0	36.36363636363637						
+fastq_trimmed_qc_sub | Liv_02_1	13632626.0		141								129.49945006926765				76.21381648575205				48.0	36.36363636363637						
+fastq_trimmed_qc_sub | Liv_02_2	13632626.0		141								129.84908828277105				75.83992652159398				49.0	18.181818181818183						
+fastq_trimmed_qc_sub | Liv_03_1	20186446.0		141								136.56298017986921				63.355774806427874				48.0	27.27272727272727						
+fastq_trimmed_qc_sub | Liv_03_2	20186446.0		141								136.63798015757703				62.564811130007506				48.0	36.36363636363637						
+fastq_trimmed_qc_sub | Liv_04_1	13116682.0		141								134.17092668709967				60.73333761116651				47.0	27.27272727272727						
+fastq_trimmed_qc_sub | Liv_04_2	13116682.0		141								134.36751489439175				60.55069731170772				48.0	27.27272727272727						
+qualimap | star | bam |		9383045.0			0.0		43.5301							86.42597383266545			208164228.0				4.359979269506646	10856742.0	249009028.0			
+qualimap | star | bam | raw_data_qualimapReport | bam				275		1.9292296465077563		30.555859482254558		0		39.3926005277872	9.919198989367183			2.98711601880031										6.166443256523403
+qualimap | star | rnaseq |																		1.67						10856742.0		
+qualimap_2 | star | bam |		9718104.0			0.0		59.2903							82.82313589002214			208164228.0				4.712103048729623	11733562.0	249009028.0			
+qualimap_2 | star | bam | raw_data_qualimapReport | bam				282		1.9280080149025414		30.550885044475557		0		39.96186872470041	9.916863813892174			2.9848826859915625										6.165418584791619
+qualimap_2 | star | rnaseq |																		1.68						11733562.0		

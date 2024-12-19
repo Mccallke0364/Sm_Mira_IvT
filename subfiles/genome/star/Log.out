@@ -1,0 +1,113 @@
+STAR version=2.7.10b
+STAR compilation time,server,dir=2023-05-25T06:56:23+0000 :/opt/conda/conda-bld/star_1684997536154/work/source
+##### Command Line:
+/data/users/mccallke0364/.conda/envs/final/bin/STAR-avx2 --runThreadN 16 --runMode genomeGenerate --genomeDir genome/star --genomeFastaFiles genome/genome.fa --sjdbGTFfile genome/annotations.gtf --sjdbOverhang 139 --genomeSAindexNbases 13
+##### Initial USER parameters from Command Line:
+###### All USER parameters from Command Line:
+runThreadN                    16     ~RE-DEFINED
+runMode                       genomeGenerate        ~RE-DEFINED
+genomeDir                     genome/star     ~RE-DEFINED
+genomeFastaFiles              genome/genome.fa        ~RE-DEFINED
+sjdbGTFfile                   genome/annotations.gtf     ~RE-DEFINED
+sjdbOverhang                  139     ~RE-DEFINED
+genomeSAindexNbases           13     ~RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+runMode                           genomeGenerate   
+runThreadN                        16
+genomeDir                         genome/star
+genomeFastaFiles                  genome/genome.fa   
+genomeSAindexNbases               13
+sjdbGTFfile                       genome/annotations.gtf
+sjdbOverhang                      139
+
+-------------------------------
+##### Final effective command line:
+/data/users/mccallke0364/.conda/envs/final/bin/STAR-avx2   --runMode genomeGenerate      --runThreadN 16   --genomeDir genome/star   --genomeFastaFiles genome/genome.fa      --genomeSAindexNbases 13   --sjdbGTFfile genome/annotations.gtf   --sjdbOverhang 139
+----------------------------------------
+
+Number of fastq files for each mate = 1
+ParametersSolo: --soloCellFilterType CellRanger2.2 filtering parameters:  3000 0.99 10
+Finished loading and checking parameters
+--genomeDir directory exists and will be overwritten: genome/star/
+Dec 15 17:25:42 ... starting to generate Genome files
+genome/genome.fa : chr # 0  "SM_V10_1" chrStart: 0
+genome/genome.fa : chr # 1  "SM_V10_Z" chrStart: 88080384
+genome/genome.fa : chr # 2  "SM_V10_3" chrStart: 174850048
+genome/genome.fa : chr # 3  "SM_V10_4" chrStart: 224657408
+genome/genome.fa : chr # 4  "SM_V10_2" chrStart: 271319040
+genome/genome.fa : chr # 5  "SM_V10_6" chrStart: 317194240
+genome/genome.fa : chr # 6  "SM_V10_5" chrStart: 342097920
+genome/genome.fa : chr # 7  "SM_V10_7" chrStart: 366477312
+genome/genome.fa : chr # 8  "SM_V10_WSR" chrStart: 386662400
+genome/genome.fa : chr # 9  "SM_V10_MITO" chrStart: 392691712
+Chromosome sequence lengths: 
+SM_V10_1	87984048
+SM_V10_Z	86692428
+SM_V10_3	49793710
+SM_V10_4	46471573
+SM_V10_2	45716244
+SM_V10_6	24696076
+SM_V10_5	24128858
+SM_V10_7	19942475
+SM_V10_WSR	5969970
+SM_V10_MITO	26917
+Genome sequence total length = 391422299
+Genome size with padding = 392953856
+Dec 15 17:25:48 ..... processing annotations GTF
+Processing pGe.sjdbGTFfile=genome/annotations.gtf, found:
+		10960 transcripts
+		88812 exons (non-collapsed)
+		69906 collapsed junctions
+Total junctions: 69906
+Dec 15 17:25:49 ..... finished GTF processing
+
+Estimated genome size with padding and SJs: total=genome+SJ=671953856 = 392953856 + 279000000
+GstrandBit=32
+Number of SA indices: 782758788
+Dec 15 17:25:50 ... starting to sort Suffix Array. This may take a long time...
+Number of chunks: 16;   chunks size limit: 417471352 bytes
+Dec 15 17:25:52 ... sorting Suffix Array chunks and saving them to disk...
+Writing 229711536 bytes into genome/star//SA_15 ; empty space on disk = 49349047353344 bytes ... done
+Writing 358832264 bytes into genome/star//SA_14 ; empty space on disk = 49348663574528 bytes ... done
+Writing 409728728 bytes into genome/star//SA_0 ; empty space on disk = 49348301815808 bytes ... done
+Writing 395826224 bytes into genome/star//SA_1 ; empty space on disk = 49347890774016 bytes ... done
+Writing 379822024 bytes into genome/star//SA_7 ; empty space on disk = 49347494412288 bytes ... done
+Writing 413775464 bytes into genome/star//SA_11 ; empty space on disk = 49347114827776 bytes ... done
+Writing 398548808 bytes into genome/star//SA_13 ; empty space on disk = 49346700640256 bytes ...Writing 401283880 bytes into genome/star//SA_2 ; empty space on disk = 49346700640256 bytes ... done
+ done
+Writing 402611328 bytes into genome/star//SA_4 ; empty space on disk = 49345899528192 bytes ...Writing 402611328 bytes into genome/star//SA_4 ; empty space on disk = 49345899528192 bytes ...Writing 410876208 bytes into genome/star//SA_3 ; empty space on disk = 49345899528192 bytes ... done
+ done
+Writing 408328976 bytes into genome/star//SA_12 ; empty space on disk = 49345087930368 bytes ... done
+Writing 413990704 bytes into genome/star//SA_5 ; empty space on disk = 49344678985728 bytes ... done
+Writing 413706352 bytes into genome/star//SA_6 ; empty space on disk = 49344262701056 bytes ...Writing 399953408 bytes into genome/star//SA_9 ; empty space on disk = 49344262701056 bytes ... done
+ done
+Writing 413989240 bytes into genome/star//SA_10 ; empty space on disk = 49343451103232 bytes ...Writing 411085160 bytes into genome/star//SA_8 ; empty space on disk = 49343430131712 bytes ... done
+ done
+Dec 15 17:26:50 ... loading chunks from disk, packing SA...
+Dec 15 17:27:00 ... finished generating suffix array
+Dec 15 17:27:00 ... generating Suffix Array index
+Dec 15 17:27:37 ... completed Suffix Array index
+WARNING: long repeat for junction # 7533 : SM_V10_1 40861022 40868365; left shift = 3; right shift = 255
+WARNING: long repeat for junction # 43741 : SM_V10_4 12873739 12882944; left shift = 231; right shift = 255
+Dec 15 17:27:37   Finished preparing junctions
+Dec 15 17:27:37 ..... inserting junctions into the genome indices
+Dec 15 17:27:48   Finished SA search: number of new junctions=69906, old junctions=0
+Dec 15 17:27:57   Finished sorting SA indicesL nInd=38867736
+Genome size with junctions=412457630  392953856   19503774
+GstrandBit1=32   GstrandBit=32
+Dec 15 17:28:06   Finished inserting junction indices
+Dec 15 17:28:13   Finished SAi
+Dec 15 17:28:13 ..... finished inserting junctions into genome
+Dec 15 17:28:13 ... writing Genome to disk ...
+Writing 412457630 bytes into genome/star//Genome ; empty space on disk = 49348821909504 bytes ... done
+SA size in bytes: 3389209415
+Dec 15 17:28:14 ... writing Suffix Array to disk ...
+Writing 3389209415 bytes into genome/star//SA ; empty space on disk = 49351798816768 bytes ... done
+Dec 15 17:28:18 ... writing SAindex to disk
+Writing 8 bytes into genome/star//SAindex ; empty space on disk = 49348798840832 bytes ... done
+Writing 112 bytes into genome/star//SAindex ; empty space on disk = 49348798840832 bytes ... done
+Writing 391468371 bytes into genome/star//SAindex ; empty space on disk = 49348798840832 bytes ... done
+Dec 15 17:28:19 ..... finished successfully
+DONE: Genome generation, EXITING

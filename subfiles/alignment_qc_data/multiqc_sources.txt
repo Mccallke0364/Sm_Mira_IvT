@@ -1,0 +1,35 @@
+Module	Section	Sample Name	Source
+Picard	DuplicationMetrics	counting_sub_2 | logs_sub |	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/counting_sub_2/logs_sub/star_duplicates
+STAR	SummaryLog	alignment_sub_2 | star |	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/alignment_sub_2/star/Log.final.out
+FastQC	all_sections	fastq_qc_sub | Int-01_S42_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Int-01_S42_L005_R1_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Int-01_S42_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Int-01_S42_L005_R2_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Int-02_S43_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Int-02_S43_L005_R1_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Int-02_S43_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Int-02_S43_L005_R2_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Int-03_S44_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Int-03_S44_L005_R1_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Int-03_S44_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Int-03_S44_L005_R2_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Int-04_S45_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Int-04_S45_L005_R1_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Int-04_S45_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Int-04_S45_L005_R2_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Liv-01_S38_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Liv-01_S38_L005_R1_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Liv-01_S38_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Liv-01_S38_L005_R2_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Liv-02_S39_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Liv-02_S39_L005_R1_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Liv-02_S39_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Liv-02_S39_L005_R2_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Liv-03_S40_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Liv-03_S40_L005_R1_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Liv-03_S40_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Liv-03_S40_L005_R2_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Liv-04_S41_L005_R1_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Liv-04_S41_L005_R1_001_fastqc.zip
+FastQC	all_sections	fastq_qc_sub | Liv-04_S41_L005_R2_001	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_qc_sub/Liv-04_S41_L005_R2_001_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Int_01_1	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Int_01_1_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Int_01_2	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Int_01_2_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Liv_04_1	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Liv_04_1_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Int_03_1	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Int_03_1_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Liv_02_1	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Liv_02_1_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Liv_02_2	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Liv_02_2_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Liv_04_2	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Liv_04_2_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Int_03_2	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Int_03_2_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Int_02_1	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Int_02_1_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Int_02_2	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Int_02_2_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Int_04_1	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Int_04_1_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Int_04_2	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Int_04_2_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Liv_01_1	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Liv_01_1_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Liv_01_2	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Liv_01_2_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Liv_03_1	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Liv_03_1_fastqc.zip
+FastQC	all_sections	fastq_trimmed_qc_sub | Liv_03_2	/data/users/mccallke0364/Final_Project/Sm_Mira_IvT/subfiles/fastq_trimmed_qc_sub/Liv_03_2_fastqc.zip

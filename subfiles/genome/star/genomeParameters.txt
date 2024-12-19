@@ -1,0 +1,19 @@
+### /data/users/mccallke0364/.conda/envs/final/bin/STAR-avx2   --runMode genomeGenerate      --runThreadN 16   --genomeDir genome/star   --genomeFastaFiles genome/genome.fa      --genomeSAindexNbases 13   --sjdbGTFfile genome/annotations.gtf   --sjdbOverhang 139
+### GstrandBit 32
+versionGenome	2.7.4a
+genomeType	Full
+genomeFastaFiles	genome/genome.fa 
+genomeSAindexNbases	13
+genomeChrBinNbits	18
+genomeSAsparseD	1
+genomeTransformType	None
+genomeTransformVCF	-
+sjdbOverhang	139
+sjdbFileChrStartEnd	- 
+sjdbGTFfile	genome/annotations.gtf
+sjdbGTFchrPrefix	-
+sjdbGTFfeatureExon	exon
+sjdbGTFtagExonParentTranscript	transcript_id
+sjdbGTFtagExonParentGene	gene_id
+sjdbInsertSave	Basic
+genomeFileSizes	412457630 3389209415

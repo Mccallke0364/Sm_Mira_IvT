@@ -4,11 +4,10 @@ print(file)
 
 rule all:
     input:
-        "genome/genome.fa.fai",
-        "genome/annotations.gtf",
+       "genome/genome.fa.fai",
         # "trimmed/Int-02_S43_L005_R1_001.fastq.gz",
         # "trimmed/",
-        "star_stats.txt"
+        "star_stats.txt",
         "multiqc_report_all_files.html"
 
 rule fetch_ref_genome:
@@ -35,9 +34,10 @@ rule create_fai:
     input:
         "genome/genome.fa"
     output:
-        "genome/genome.fa.fai"
+        fai="genome/genome.fa.fai",
+        textfile="genome/genome_stats.txt"
     shell:
-        "samtools faidx {input}"
+        "samtools faidx {input} -o {output.textfile}"
 
 rule cutadapt:
     input:
@@ -51,7 +51,7 @@ rule cutadapt:
         o_2="trimmed/{sample}_R2_001_trimmed.fastq.gz"
 
     shell:
-        "cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -o {output.o_1} -p {output.o_2} {input.i_1} {input.i_2}"
+        "cutadapt -j 32 -m 20 --nextseq-trim=10 -u 10 -U 10 -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -o {output.o_1} -p {output.o_2} {input.i_1} {input.i_2}"
 
 # rule create_config_file:
 #     input:
@@ -104,89 +104,124 @@ rule multiqc:
         dir=rules.qc.params.out
     shell:
         "multiqc -f -d {params.dir} -n {output}"
-rule star:
+#if time generate manifest
+rule star_sa:
     input:
-
+        fa=  "genome/genome.fa",
+        # fai= "genome/genome.fa.fai",
+        ant= "genome/annotations.gtf"
     output:
-        genomeDir=directory("genome_sub/star")
-    ="genome/genome.fa"
-    ="genome/annotations.gtf"
+        genomeDir=directory("genome/star")
     params:
-        overhang=150
-        bpc=13
+        overhang=150,
+        bpc=13,
         runMode="genomeGenerate"
-        runMode_align="alignReads"
+        
     threads:
-        32
+        16
     run:
         """
         STAR \
             --runThreadN {threads} \
             --runMode {params.runMode} \
             --genomeDir {output.genomeDir} \
-            --genomeFastaFiles  \
-            --sjdbGTFfile {output.sjdbGTFfile} \
+            --genomeFastaFiles  {input.fa}\
+            --sjdbGTFfile {input.ant} \
             --sjdbOverhang {params.overhang}\
             --genomeSAindexNbases {params.bpc}
         """
 rule alignment:
     input:
-        gene_dir="genome_sub/star"
+        gene_dir="genome/star"
     output:
         manifest_file = "manifest.tsv",
-        out_align = "alignment/star/",
-        log_file_1 = "alignment/star/firstlog.final.out",
-        log_file_2 = "alignment/star/second.final.out",
-        sjdbFileChrStartEnd = "alignment/star/SJ.out.tab"
+        out_align = "alignment_sub/star/",
+        log_file_1 = "alignment_sub/star/firstlog.final.out",
+        log_file_2 = "alignment_sub/star/second.final.out",
+        sjout = "alignment_sub/star/SJ.out.tab"
+    params:
+        runMode_align="alignReads"
     threads:
-        32
+        16
     run:
 
         """STAR \
-            --runThreadN {threads} \
-            --runMode {params.runMode_align}\
-            --genomeDir alignment/star \
-            --readFilesManifest {manifest_file}\
-            --readFilesCommand zcat \
-            --outSAMtype BAM SortedByCoordinate \
-            --outSAMunmapped Within \
-            --outFileNamePrefix {output.out_align}\
-            cp alignment/star/Log.final.out {output.log_file_1}
+           --runThreadN {threads} \
+           --runMode {params.runMode_align}\
+           --genomeDir {input.gene_dir}\
+           --readFilesManifest {manifest_file}\
+           --readFilesCommand zcat \
+           --outSAMtype BAM SortedByCoordinate \
+           --outSAMunmapped Within \
+           --outFileNamePrefix {output.out_align}\
+           cp alignment/star/Log.final.out {output.log_file_1}
         """,
         """ 
         STAR \
-            --runThreadN {threads) \
-            --runMode {params.runMode_align} \
-            --genomeDir {input.gene_dir} \
-            --readFilesManifest {manifest_file} \
-            --readFilesCommand zcat \
-            --outSAMtype BAM SortedByCoordinate \
-            --outSAMunmapped Within \
-            --outSAMattributes NH HI AS nM RG \
-            --outFileNamePrefix {output.out_align} \
-            --sjdbFileChrStartEnd {sjdbFileChrStartEnd}
-            cp alignment/star/Log.final.out {output.log_file_2}
+        --runThreadN {threads) \
+        --runMode {params.runMode_align} \
+        --genomeDir {input.gene_dir} \
+        --readFilesManifest {manifest_file} \
+        --readFilesCommand zcat \
+        --outSAMtype BAM SortedByCoordinate \
+        --outSAMunmapped Within \
+        --outSAMattributes NH HI AS nM RG \
+        --outFileNamePrefix {output.out_align} \
+        --sjdbFileChrStartEnd {output.sjout}
+        cp alignment/star/Log.final.out {output.log_file_2}
         """
 rule samtools:
     input:
-        "alignment/",
+        "alignment_sub/star",
         file_bam= "alignment/star/Aligned.sortedByCoord.out.bam"
     output:
         "star_stats.txt"
     threads:
-        32 
+        16 
     run:
         shell("samtools flagstat {input} > {output}"),
-        shell("samtools index -@ {threads} {input.file_bam}"),
-        shell("samtools stats -@ {threads} {input.file_bam} > {output}")
+        shell("samtools index -@ {threads} {input.file_bam}>> {output}"),
+        shell("samtools stats -@ {threads} {input.file_bam} >> {output}")
 
 rule qualimap:
     input:
-        bamqc_rnaseq="alignment/star/Aligned.sortedByCoord.out.bam"
-        genome_annotate="genome/annotations.gtf"
+        bamqc_rnaseq="alignment_sub/star/Aligned.sortedByCoord.out.bam"
+        g_ant="genome/annotations.gtf"
     output:
         out_bamqc="qualimap/star/bam"
         out_rnaseq="qualimap/star/rnaseq"
     run:
-        shell("qualimap bamqc -nt 32 -outdir {output.out_bamqc} -bam {input.bamqc_rnaseq} --feature-file {input.genome_annotate}"),
-        shell("qualimap rnaseq -outdir {output.out_rnaseq} -bam {input.bamqc_rnaseq} -gtf {input.genome_annotate}")
+        shell("qualimap bamqc -nt 32 -outdir {output.out_bamqc} -bam {input.bamqc_rnaseq} --feature-file {input.ge_ant}"),
+        shell("qualimap rnaseq -outdir {output.out_rnaseq} -bam {input.bamqc_rnaseq} -gtf {input.g_ant}")
+
+
+rule featureCounts:
+    input:
+        g_ant="genome/annotations.gtf"
+    output:
+        s_c= "star_counts.tsv"
+    threads:
+        32
+    shell:
+        """
+        featureCounts -T {threads} \
+            dedup_sub/star.bam \
+            -T {threads} \
+            --byReadGroup \
+            -s 1 \
+            --ignoreDup \
+            -M \
+            --fraction \
+            -a {input.g_ant} \
+            -o {output.s_c} \
+            --verbose
+        """
+rule multiqc_2:
+    input:
+        "fastq_qc_sub/ ", 
+        "fastq_trimmed_qc_sub/ ",
+        "alignment_sub/ "
+    output:
+        "mutliqc_final.html"
+    shell:
+        "multiqc --force -d {input} -n {output}"
