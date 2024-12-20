@@ -4,11 +4,10 @@ print(file)
 
 rule all:
     input:
-       "genome/genome.fa.fai",
-        # "trimmed/Int-02_S43_L005_R1_001.fastq.gz",
-        # "trimmed/",
+    #    "genome/genome.fa.fai", 
         "star_stats.txt",
-        "multiqc_report_all_files.html"
+        "multiqc_report_all_files.html",
+        "plots/"
 
 rule fetch_ref_genome:
     output:
@@ -34,89 +33,63 @@ rule create_fai:
     input:
         "genome/genome.fa"
     output:
-        fai="genome/genome.fa.fai",
-        textfile="genome/genome_stats.txt"
+        "genome/genome.fa.fai"
     shell:
-        "samtools faidx {input} -o {output.textfile}"
+        "samtools faidx {input}"
 
 rule cutadapt:
     input:
-        # "/data/classes/2024/fall/biol343/course_files/20240923_LH00283_0144_B22NMVKLT3/Int-02_S43_L005_R2_001.fastq.gz"
         i_1="/data/classes/2024/fall/biol343/course_files/20240923_LH00283_0144_B22NMVKLT3/{sample}_R1_001.fastq.gz",
         i_2="/data/classes/2024/fall/biol343/course_files/20240923_LH00283_0144_B22NMVKLT3/{sample}_R2_001.fastq.gz"
 
     output:
-        # file_out="trimmed/Int-02_S43_L005_R2_001.fastq.gz",
         o_1="trimmed/{sample}_R1_001_trimmed.fastq.gz",
         o_2="trimmed/{sample}_R2_001_trimmed.fastq.gz"
 
     shell:
         "cutadapt -j 32 -m 20 --nextseq-trim=10 -u 10 -U 10 -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -o {output.o_1} -p {output.o_2} {input.i_1} {input.i_2}"
 
-# rule create_config_file:
-#     input:
-#         ina=
-#     # output:
-#     params:
-     
-#     run:
-
-   
-# rule multi_qc_report_copy:
-#     input:
-#         "/data/classes/2024/fall/biol343/course_files/20240923_LH00283_0144_B22NMVKLT3/multiqc_report.html"
-#     output:
-#         directory("qc_snake/"),
-#         out="qc_snake/multiqc_report.html"
-#     shell:
-#         "cp {input} {output.out}"
 
 rule qc:
     input:
-        "/data/classes/2024/fall/biol343/course_files/20240923_LH00283_0144_B22NMVKLT3/{sample}.fastq.gz"
+        a="/data/classes/2024/fall/biol343/course_files/20240923_LH00283_0144_B22NMVKLT3/{sample}.fastq.gz"
     output:
-        "qc_snake/{sample}_fastqc.html",
-        "qc_snake/{sample}_fastqc.zip"
+        multiext("qc_snake/{sample}_fastqc", ".html", ".zip")
     params:
         out="qc_snake/"
     shell:
-        "fastqc -t 16 {input} -o {params.out}"
+        "fastqc -t 16 {input.a} -o {params.out}"
 
 rule qc_2:
     input:
-        "trimmed/{sample}.fastq.gz"
+        a="trimmed/{sample}.fastq.gz"
     output:
         multiext("qc_snake/{sample}_fastqc", ".html", ".zip")
-        # "qc_snake/{sample}_fastqc.html",
-        # "qc_snake/{sample}_fastqc.zip"
     params:
-        qc_2_out="qc_snake/"
+        qc_2_out = "qc_snake/"
     shell:
-        "fastqc -t 16 {input} -o {params.qc_2_out}"
-# config_file: rules.create_config_file.output.file
+        "fastqc -t 16 {input.a} -o {params.qc_2_out}"
 rule multiqc:
     input:
-        i=expand("qc_snake/{sample}_trimmed_fastqc.html", sample=file),#[line for line in rules.create_config_file.output])
+        i=expand("qc_snake/{sample}_trimmed_fastqc.html", sample=file),
         i_2=expand("qc_snake/{sample}_fastqc.html", sample=file)
     output:
-        "multiqc_report_all_files.html"
+        a="multiqc_report_all_files.html"
     params:
-        dir=rules.qc.params.out
+        dira="qc_snake/"
     shell:
-        "multiqc -f -d {params.dir} -n {output}"
-#if time generate manifest
+        "multiqc -f -d {params.dira} -n {output.a}"
+
 rule star_sa:
     input:
-        fa=  "genome/genome.fa",
-        # fai= "genome/genome.fa.fai",
-        ant= "genome/annotations.gtf"
+        fa = "genome/genome.fa",
+        ant = "genome/annotations.gtf"
     output:
-        genomeDir=directory("genome/star")
+        genomeDir=directory("genome/star/")
     params:
         overhang=150,
         bpc=13,
         runMode="genomeGenerate"
-        
     threads:
         16
     run:
@@ -132,19 +105,19 @@ rule star_sa:
         """
 rule alignment:
     input:
-        gene_dir="genome/star"
+        gene_dir="genome/star/"
     output:
         manifest_file = "manifest.tsv",
         out_align = "alignment_sub/star/",
         log_file_1 = "alignment_sub/star/firstlog.final.out",
         log_file_2 = "alignment_sub/star/second.final.out",
-        sjout = "alignment_sub/star/SJ.out.tab"
+        sjout = "alignment_sub/star/SJ.out.tab",
+        out="alignment_sub/star/Aligned.sortedByCoord.out.bam"
     params:
         runMode_align="alignReads"
     threads:
         16
     run:
-
         """STAR \
            --runThreadN {threads} \
            --runMode {params.runMode_align}\
@@ -153,8 +126,9 @@ rule alignment:
            --readFilesCommand zcat \
            --outSAMtype BAM SortedByCoordinate \
            --outSAMunmapped Within \
-           --outFileNamePrefix {output.out_align}\
-           cp alignment/star/Log.final.out {output.log_file_1}
+           --outFileNamePrefix {output.out_align},""",
+        """
+           cp alignment_sub/star/Log.final.out {output.log_file_1}
         """,
         """ 
         STAR \
@@ -167,37 +141,54 @@ rule alignment:
         --outSAMunmapped Within \
         --outSAMattributes NH HI AS nM RG \
         --outFileNamePrefix {output.out_align} \
-        --sjdbFileChrStartEnd {output.sjout}
-        cp alignment/star/Log.final.out {output.log_file_2}
+        --sjdbFileChrStartEnd {output.sjout}""",
         """
+        cp alignment_sub/star/Log.final.out {output.log_file_2}
+        """
+
+
 rule samtools:
     input:
-        "alignment_sub/star",
-        file_bam= "alignment/star/Aligned.sortedByCoord.out.bam"
+        align_star="alignment_sub/star",
+        file_bam= "alignment_sub/star/Aligned.sortedByCoord.out.bam"
     output:
-        "star_stats.txt"
+        a="star_stats.txt"
     threads:
         16 
     run:
-        shell("samtools flagstat {input} > {output}"),
-        shell("samtools index -@ {threads} {input.file_bam}>> {output}"),
-        shell("samtools stats -@ {threads} {input.file_bam} >> {output}")
+        shell("samtools flagstat {input.align_star} > {output.a}")
 
 rule qualimap:
     input:
-        bamqc_rnaseq="alignment_sub/star/Aligned.sortedByCoord.out.bam"
+        bamqc_rnaseq="alignment_sub/star/Aligned.sortedByCoord.out.bam",
         g_ant="genome/annotations.gtf"
     output:
-        out_bamqc="qualimap/star/bam"
+        out_bamqc="qualimap/star/bam",
         out_rnaseq="qualimap/star/rnaseq"
+    threads:
+        32
     run:
-        shell("qualimap bamqc -nt 32 -outdir {output.out_bamqc} -bam {input.bamqc_rnaseq} --feature-file {input.ge_ant}"),
+        shell("qualimap bamqc -nt {threads} -outdir {output.out_bamqc} -bam {input.bamqc_rnaseq} --feature-file {input.ge_ant}"),
         shell("qualimap rnaseq -outdir {output.out_rnaseq} -bam {input.bamqc_rnaseq} -gtf {input.g_ant}")
 
-
+rule markDuplicates:
+    input:
+        bamfile= "alignment_sub/star/Aligned.sortedByCoord.out.bam"
+    output:
+        count_dir="counting_sub/",
+        logs_dir ="counting_sub/logs_sub/",
+        dedup_dir = "counting_sub/dedup_sub/",
+        dup_dir= "counting_sub/logs_sub/star_duplicates/",
+        bamod= "counting_sub/dedup_sub/star.bam"
+    params:
+        validation= "--VALIDATION_STRINGENCY SILENT"
+    shell:
+        "picard MarkDuplicates -I {input} -M {output.dup_dir}-O {output.bamod} -Xmx100g {params.validation}"
+        
 rule featureCounts:
     input:
-        g_ant="genome/annotations.gtf"
+        g_ant="genome/annotations.gtf",
+        bamfile= "counting_sub/dedup_sub/star.bam"
     output:
         s_c= "star_counts.tsv"
     threads:
@@ -205,8 +196,9 @@ rule featureCounts:
     shell:
         """
         featureCounts -T {threads} \
-            dedup_sub/star.bam \
+            {input.bamfile} \
             -T {threads} \
+            -p \
             --byReadGroup \
             -s 1 \
             --ignoreDup \
@@ -218,10 +210,21 @@ rule featureCounts:
         """
 rule multiqc_2:
     input:
-        "fastq_qc_sub/ ", 
-        "fastq_trimmed_qc_sub/ ",
-        "alignment_sub/ "
+        fastqc="fastq_qc_sub/", 
+        trimmed_qc="fastq_trimmed_qc_sub/",
+        alignment_qc= "alignment_sub/",
+        count_qc = "counting_sub/",
+        qualimap_qc = "qualimap/"
     output:
         "mutliqc_final.html"
     shell:
         "multiqc --force -d {input} -n {output}"
+
+rule R_script:
+    input:
+        df="star_counts.tsv",
+        Rscript = "differential_expressions.R"
+    output:
+        "plots/"
+    shell:
+        "Rscript {input.Rscript}"

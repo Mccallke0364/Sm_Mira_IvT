@@ -36,24 +36,13 @@ counts_m <- counts_filt |>
 rownames(counts_m) <- counts_filt$Geneid
 write.csv(counts_m, "plots/counts_m.csv")
 
-dists <- dist(t(counts_m))
 
-dists_df <- as.matrix(dists) |>
-    as_tibble(rownames = 'sample')
-write.csv(dists_df, "plots/dists_df.csv")
 
-dist_plot <- dists_df |>
-    pivot_longer(-sample, names_to = 'comp', values_to = 'dist') |>
-    ggplot(aes(x = sample, y = comp, fill = dist)) +
-    geom_tile() +
-    scale_fill_viridis_c() +
-    coord_equal() +
-    NULL
-ggsave("plots/dist_plot.png")
+
 
 pca_fit <- t(log10(counts_m + 1)) |> 
   prcomp(scale = TRUE)
-pca_fit
+# pca_fit
 
 pca_fit |>
   augment(t(counts_m)) |>
@@ -68,7 +57,7 @@ metadata <- data.frame(sample_id = colnames(counts_m)) |>
            rep = str_sub(sample_id, 5))
 rownames(metadata) <- metadata$sample_id
 metadata <- select(metadata, -sample_id)
-metadata
+# metadata
 
 all(rownames(metadata) == colnames(counts_m))
 
@@ -89,7 +78,7 @@ volcano_plot <- volcano_data |>
     geom_vline(xintercept = 2) +
     geom_vline(xintercept = -2) +
     theme_minimal()
-volcano_plot
+# volcano_plot
 ggsave("plots/volcano_plot.png")
 
 volcano_plot_2 <- volcano_data |> 
@@ -104,11 +93,26 @@ volcano_plot_2 <- volcano_data |>
     geom_vline(xintercept = -2) +
     ggtitle("Gene Expression")+
     theme_gray()
-volcano_plot_2
+# volcano_plot_2
 ggsave("plots/volcano_plot_2.png")
 
 vsd <- varianceStabilizingTransformation(dds2)
+# write.csv(vsd, "vsd.csv")
 write.csv(assay(vsd), "counting_sub_2/vsd.csv")
+
+dists <- dist(t(assay(vsd)))
+dists_df <- as.data.frame(as.table(as.matrix(dists)))
+
+
+colnames(dists_df) <- c("sample", "comp", "dist")
+write.csv(dists_df, "plots/dists.csv")
+pivot_longer(dists_df, cols="sample", names_to = 'comp', values_to = 'dist')
+ggplot(dists_df, aes(x = sample, y = comp, fill = dist)) +
+    geom_tile() +
+    scale_fill_viridis_c() +
+    coord_equal() 
+ggsave("plots/dists_plot.png")
+
 pca_desq <- plotPCA(vsd, intgroup = "sample")
 ggsave("plots/pca_desq.png")
 write_csv(volcano_data, "plots/volcano_data.csv")
